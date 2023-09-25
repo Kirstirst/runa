@@ -10,4 +10,9 @@ $APPLICATION->SetTitle("тестовая");
 		"EDIT_TEMPLATE" => "",
 		"PATH" => "/include/logo.php"
 	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><br>
+ <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "navigation", Array(
+	
+	),
+	false
+);?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

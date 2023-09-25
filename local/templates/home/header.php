@@ -117,7 +117,6 @@ use Bitrix\Main\Page\Asset;
                 </div>
 
 
-
         <?$APPLICATION->IncludeComponent("bitrix:menu", "top_multi", Array(
             "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
             "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
@@ -136,4 +135,11 @@ use Bitrix\Main\Page\Asset;
             </div>
         </div>
     </div>
+    <?
+    if($APPLICATION->GetCurPage() !== '/') {
+        $APPLICATION->IncludeComponent("bitrix:breadcrumb", "navigation", array(),
+            false
+        );
+    }
+    ?>
 </div>
