@@ -22,7 +22,7 @@ $strReturn .= '<div class="site-blocks-cover inner-page-cover overlay" style="ba
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
                 <div class="col-md-10">
-                    <h1 class="mb-2">About Us</h1>
+                    <h1 class="mb-2">' . $APPLICATION->GetTitle() .'</h1>
                     <div>
                     ';
 
