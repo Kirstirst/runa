@@ -1,7 +1,11 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Мои объявления");
-?><?$APPLICATION->IncludeComponent(
+?>
+<?global $arFilter;
+$user = $GLOBALS['USER']->GetID();
+$arFilter = ['CREATED_BY' => $user];?>
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"ads_complex", 
 	array(
@@ -46,8 +50,12 @@ $APPLICATION->SetTitle("Мои объявления");
 			1 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "BATHROOMS",
+			1 => "FLOORS",
+			2 => "GARAGE",
+			3 => "AREA",
+			4 => "PRICE",
+			5 => "",
 		),
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",

@@ -28,7 +28,7 @@ $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["Nav
     <?while($arResult["nStartPage"] <= $arResult["nEndPage"]):?>
 
         <?if ($arResult["nStartPage"] == $arResult["NavPageNomer"]):?>
-            <b><?=$arResult["nStartPage"]?></b>
+            <a class="active"><?=$arResult["nStartPage"]?></a>
         <?elseif($arResult["nStartPage"] == 1 && $arResult["bSavePage"] == false):?>
             <a href="<?=$arResult["sUrlPath"]?><?=$strNavQueryStringFull?>"><?=$arResult["nStartPage"]?></a>
         <?else:?>

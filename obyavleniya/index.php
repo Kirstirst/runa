@@ -1,10 +1,13 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Объявления");
-?><?$APPLICATION->IncludeComponent(
+?>
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"ads_complex", 
 	array(
+		"USE_FILTER" => "Y",
+		"FILTER_NAME" => "arFilter",
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
@@ -18,6 +21,7 @@ $APPLICATION->SetTitle("Объявления");
 		"CACHE_TIME" => "86400",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "ads_complex",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
@@ -41,10 +45,14 @@ $APPLICATION->SetTitle("Объявления");
 			9 => "PROPERTY_ADDITIONS",
 			10 => "GALLERY",
 			11 => "ADDITIONS",
+			12 => "",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "5",
@@ -68,7 +76,7 @@ $APPLICATION->SetTitle("Объявления");
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
-		"NEWS_COUNT" => "2",
+		"NEWS_COUNT" => "1",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
@@ -89,17 +97,20 @@ $APPLICATION->SetTitle("Объявления");
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
 		"USE_CATEGORIES" => "N",
-		"USE_FILTER" => "N",
 		"USE_PERMISSIONS" => "N",
 		"USE_RATING" => "N",
 		"USE_REVIEW" => "N",
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
-		"COMPONENT_TEMPLATE" => "ads_complex",
-		"DISPLAY_DATE" => "Y",
-		"DISPLAY_PICTURE" => "Y",
-		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"USE_SHARE" => "N",
+		"FILTER_FIELD_CODE" => array(
+			0 => "CREATED_BY",
+			1 => "",
+		),
+		"FILTER_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",

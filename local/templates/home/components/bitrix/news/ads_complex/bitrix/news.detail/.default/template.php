@@ -11,7 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-echo '<pre>';print_r($arResult['DISPLAY_PROPERTIES']);echo '</pre>';
+//echo '<pre>';print_r($arResult['DISPLAY_PROPERTIES']);echo '</pre>';
 ?>
 
 
