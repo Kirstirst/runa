@@ -1,11 +1,13 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 CJSCore::Init();
+//echo '<pre>';print_r($arResult);echo '</pre>';
 ?>
 <div class="site-section">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-8 mb-5">
+
                 <?
                 if ($arResult['SHOW_ERRORS'] === 'Y' && $arResult['ERROR'] && !empty($arResult['ERROR_MESSAGE'])) {
                     ShowMessage($arResult['ERROR_MESSAGE']);
@@ -18,11 +20,14 @@ CJSCore::Init();
                             <input type="hidden" name="backurl" class="form-control"
                                    value="<?= $arResult["BACKURL"] ?>"/>
                         <?endif ?>
+
                         <? foreach ($arResult["POST"] as $key => $value): ?>
                             <input type="hidden" name="<?= $key ?>" value="<?= $value ?>"/>
                         <?endforeach ?>
                         <input type="hidden" name="AUTH_FORM" value="Y"/>
                         <input type="hidden" name="TYPE" value="AUTH"/>
+
+
 
                         <div class="row form-group">
                             <div class="col-md-12 mb-3 mb-md-0">
@@ -46,6 +51,7 @@ CJSCore::Init();
                                 <label class="font-weight-bold" for="email">Пароль</label>
                                 <input class="form-control" type="password" name="USER_PASSWORD" maxlength="255"
                                        size="17" autocomplete="off"/>
+                                <noidex><a href="<?=$arResult["AUTH_FORGOT_PASSWORD_URL"]?>">Забыли пароль?</a></noidex>
                                 <? if ($arResult["SECURE_AUTH"]): ?>
                                     <span class="bx-auth-secure" id="bx_auth_secure<?= $arResult["RND"] ?>"
                                           title="<? echo GetMessage("AUTH_SECURE_NOTE") ?>" style="display:none">
@@ -62,6 +68,7 @@ CJSCore::Init();
                                 <?endif ?>
                             </div>
                         </div>
+
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <? if ($arResult["STORE_PASSWORD"] == "Y"): ?>
@@ -89,6 +96,7 @@ CJSCore::Init();
                                 <?endif ?>
                             </div>
                         </div>
+                        <noidex><a href="<?=$arResult["AUTH_FORGOT_PASSWORD_URL"]?>"></noidex>
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <input type="submit" class="btn btn-primary  py-2 px-4 rounded-0" name="Login"
@@ -105,6 +113,7 @@ CJSCore::Init();
                                             <br/></td>
                                     </tr>
                                 <?endif ?>
+
                             </div>
                         </div>
                     </form>

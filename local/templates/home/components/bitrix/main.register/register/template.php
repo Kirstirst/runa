@@ -226,7 +226,7 @@ elseif($arResult["USE_EMAIL_CONFIRMATION"] === "Y"):
                 <input class="btn btn-primary  py-2 px-4 rounded-0" type="submit" name="register_submit_button" value="<?=GetMessage("AUTH_REGISTER")?>" />
             </div>
         </div>
-
+        <noidex><p><a href="<?=$arResult["BACKURL"]?>">Вернуться к форме авторизации</a></p></noidex>
     </form>
 <p><?echo $arResult["GROUP_POLICY"]["PASSWORD_REQUIREMENTS"];?></p>
 
@@ -235,6 +235,7 @@ elseif($arResult["USE_EMAIL_CONFIRMATION"] === "Y"):
 <p><span class="starrequired">*</span><?=GetMessage("AUTH_REQ")?></p>
 
 <?endif?>
+
             </div>
         </div>
     </div>
