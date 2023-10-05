@@ -5,7 +5,7 @@ $APPLICATION->SetTitle("Авторизация");
 	"bitrix:system.auth.form", 
 	"auth", 
 	array(
-		"FORGOT_PASSWORD_URL" => "/polzovatel/",
+		"FORGOT_PASSWORD_URL" => "/polzovatel/vosstanovlenie-parolya.php",
 		"PROFILE_URL" => "/polzovatel/profil.php",
 		"REGISTER_URL" => "/polzovatel/registratsiya.php",
 		"SHOW_ERRORS" => "N",
