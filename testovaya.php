@@ -2,17 +2,12 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("тестовая");
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:main.include",
-	"",
+	"bitrix:system.auth.form",
+	"authex",
 	Array(
-		"AREA_FILE_SHOW" => "file",
-		"AREA_FILE_SUFFIX" => "inc",
-		"EDIT_TEMPLATE" => "",
-		"PATH" => "/include/logo.php"
+		"FORGOT_PASSWORD_URL" => "",
+		"PROFILE_URL" => "",
+		"REGISTER_URL" => "",
+		"SHOW_ERRORS" => "N"
 	)
-);?><br>
- <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "navigation", Array(
-	
-	),
-	false
-);?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
